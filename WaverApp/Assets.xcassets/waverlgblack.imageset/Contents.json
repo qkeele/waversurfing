@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "waverlg.png",
+      "filename" : "waverlgblack.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "waverlg 1.png",
+      "filename" : "waverlgblack 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "waverlg 2.png",
+      "filename" : "waverlgblack 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct RegistrationConfirmationView: View {
-    var didDismiss: () -> Void  // ✅ Callback to update state in RegisterView
+    var didDismiss: () -> Void
+    
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            
+            Color(.systemBackground).ignoresSafeArea()
+
             VStack(spacing: 20) {
                 Spacer()
-                
+
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .scaledToFit()
@@ -26,11 +28,11 @@ struct RegistrationConfirmationView: View {
                 Text("Signed up successfully.")
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(Color.primary)
 
                 Text("Verify your email before logging in.")
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
 

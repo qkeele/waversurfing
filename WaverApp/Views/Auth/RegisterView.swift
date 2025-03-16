@@ -21,14 +21,15 @@ struct RegisterView: View {
     @State private var errorMessage = ""
     
     @EnvironmentObject var userSession: UserSession
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.black.ignoresSafeArea()
+                Color(.systemBackground).ignoresSafeArea()
 
                 VStack(spacing: 20) {
-                    Image("waver_logo")
+                    Image(colorScheme == .dark ? "waver_logo" : "waver_logo_black")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
@@ -40,16 +41,19 @@ struct RegisterView: View {
                         .font(.title2).bold()
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
+                        .foregroundColor(Color.primary)
 
                     Text("Join the community and document your sessions")
                         .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.secondary)
 
                     VStack(spacing: 12) {
                         HStack {
                             TextField("Username", text: $username)
-                                .tint(.white).foregroundColor(.white)
-                                .autocorrectionDisabled().textInputAutocapitalization(.never)
+                                .tint(Color.primary)
+                                .foregroundColor(Color.primary)
+                                .autocorrectionDisabled()
+                                .textInputAutocapitalization(.never)
                                 .onChange(of: username) {
                                     usernameValidator.checkAvailability(username: username)
                                 }
@@ -57,22 +61,25 @@ struct RegisterView: View {
                             ValidationIcon(isValid: usernameValidator.isAvailable)
                         }
                         .padding(18)
-                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white))
+                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary))
 
                         HStack {
                             TextField("Email", text: $email)
-                                .tint(.white).foregroundColor(.white)
-                                .autocorrectionDisabled().textInputAutocapitalization(.never)
+                                .tint(Color.primary)
+                                .foregroundColor(Color.primary)
+                                .autocorrectionDisabled()
+                                .textInputAutocapitalization(.never)
 
                             ValidationIcon(isValid: Validator.isValidEmail(email))
                         }
                         .padding(18)
-                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white))
+                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary))
 
                         SecureField("Password", text: $password)
-                            .tint(.white).foregroundColor(.white)
+                            .tint(Color.primary)
+                            .foregroundColor(Color.primary)
                             .padding(18)
-                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white))
+                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary))
 
                         VStack(alignment: .leading, spacing: 4) {
                             criteriaRow(text: "Includes letters, a number, and a symbol",
@@ -91,24 +98,15 @@ struct RegisterView: View {
                             Task {
                                 isLoading = true
                                 do {
-                                    print("➡️ Attempting to register user: \(email)")
-
                                     try await SupabaseService.shared.registerUser(email: email, password: password, username: username)
-
-                                    print("✅ User registered successfully.")
-
                                     DispatchQueue.main.async {
                                         showConfirmation = true
                                     }
-
-                                    print("➡️ showConfirmation set to true")
-                                    
                                 } catch {
                                     DispatchQueue.main.async {
                                         errorMessage = error.localizedDescription
                                         showingErrorAlert = true
                                     }
-                                    print("❌ Error during registration: \(error)")
                                 }
                                 isLoading = false
                             }
@@ -122,16 +120,16 @@ struct RegisterView: View {
                                     .frame(maxWidth: .infinity).padding()
                             }
                         }
-
-                        .background(canRegister ? .white : .white.opacity(0.2))
-                        .foregroundColor(canRegister ? .black : .gray)
+                        .background(canRegister ? Color.primary : Color.secondary.opacity(0.2))
+                        .foregroundColor(canRegister ? Color(.systemBackground) : .gray)
                         .cornerRadius(10)
                         .disabled(!canRegister || isLoading)
 
                         Button("Already have an account? **Sign in**") {
                             isRegistering = false
                         }
-                        .font(.footnote).foregroundColor(.white)
+                        .font(.footnote)
+                        .foregroundColor(Color.primary)
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 40)
@@ -165,7 +163,7 @@ struct RegisterView: View {
             Image(systemName: isMet ? "checkmark.circle" : "xmark.circle")
                 .foregroundColor(isMet ? .green : .red)
             Text(text)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
                 .font(.footnote)
         }
     }

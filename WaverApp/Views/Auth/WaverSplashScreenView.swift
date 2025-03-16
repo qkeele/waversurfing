@@ -8,22 +8,17 @@
 import SwiftUI
 
 struct WaverSplashScreenView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
-        VStack {
-            Spacer()
-            Image("waverlg")
+        ZStack {
+            Color(UIColor.systemBackground)
+                .ignoresSafeArea()
+            
+            /*Image(colorScheme == .dark ? "waverlg" : "waverlgblack")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200)
-                .padding(.top, 30)
-
-            Spacer()
-
-            /*ProgressView() // ✅ Shows loading indicator
-                .progressViewStyle(CircularProgressViewStyle())
-                .padding()*/
+                .frame(width: 200, height: 200) // Match storyboard constraints*/
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(UIColor.systemBackground)) // ✅ Matches system theme
     }
 }

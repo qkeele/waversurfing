@@ -23,6 +23,13 @@
 		F37267692D78295B004A81B0 /* ReportListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37267682D78295B004A81B0 /* ReportListToolbar.swift */; };
 		F372676B2D78297C004A81B0 /* ReportListFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */; };
 		F372676D2D78EAE8004A81B0 /* SurfDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */; };
+		F3822A6A2D86869A00488DF0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A692D86869A00488DF0 /* Auth */; };
+		F3822A6C2D86869A00488DF0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6B2D86869A00488DF0 /* Functions */; };
+		F3822A6E2D86869A00488DF0 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6D2D86869A00488DF0 /* PostgREST */; };
+		F3822A702D86869A00488DF0 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6F2D86869A00488DF0 /* Realtime */; };
+		F3822A722D86869A00488DF0 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A712D86869A00488DF0 /* Storage */; };
+		F3822A742D86869A00488DF0 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A732D86869A00488DF0 /* Supabase */; };
+		F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */; };
 		F38887F82D6BCA9F0097F3BE /* ValidationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */; };
 		F38887FA2D6BCAD30097F3BE /* AuthHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */; };
 		F3A830F92D666F150022659C /* RatingDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A830F82D666F150022659C /* RatingDistribution.swift */; };
@@ -43,15 +50,8 @@
 		F3C0BA372D65DAD900350C01 /* RegionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0BA362D65DAD900350C01 /* RegionListView.swift */; };
 		F3CFB5C32D5ED84E0083E353 /* WaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFB5C22D5ED84E0083E353 /* WaverApp.swift */; };
 		F3CFB5C72D5ED84F0083E353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CFB5C62D5ED84F0083E353 /* Assets.xcassets */; };
-		F3CFB5CA2D5ED84F0083E353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CFB5C92D5ED84F0083E353 /* Preview Assets.xcassets */; };
 		F3CFB5D42D5ED9900083E353 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFB5D32D5ED9900083E353 /* Spot.swift */; };
 		F3CFB5D62D5ED9B30083E353 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFB5D52D5ED9B30083E353 /* SupabaseService.swift */; };
-		F3EC1FB52D7D4B7700BD694A /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FB42D7D4B7700BD694A /* Auth */; };
-		F3EC1FB72D7D4B7700BD694A /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FB62D7D4B7700BD694A /* Functions */; };
-		F3EC1FB92D7D4B7700BD694A /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FB82D7D4B7700BD694A /* PostgREST */; };
-		F3EC1FBB2D7D4B7700BD694A /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FBA2D7D4B7700BD694A /* Realtime */; };
-		F3EC1FBD2D7D4B7700BD694A /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FBC2D7D4B7700BD694A /* Storage */; };
-		F3EC1FBF2D7D4B7700BD694A /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F3EC1FBE2D7D4B7700BD694A /* Supabase */; };
 		F3EC1FC12D7DB9B400BD694A /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3EC1FC02D7DB9B400BD694A /* Secrets.plist */; };
 		F3F5A1CD2D7007CC00FC10ED /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A1CC2D7007CC00FC10ED /* UserSession.swift */; };
 		F3FA3C8B2D6FBDA10014976B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA3C8A2D6FBDA10014976B /* ToastView.swift */; };
@@ -75,6 +75,7 @@
 		F37267682D78295B004A81B0 /* ReportListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListToolbar.swift; sourceTree = "<group>"; };
 		F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListFloatingButton.swift; sourceTree = "<group>"; };
 		F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfDataManager.swift; sourceTree = "<group>"; };
+		F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationIcon.swift; sourceTree = "<group>"; };
 		F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelpers.swift; sourceTree = "<group>"; };
 		F3A830F82D666F150022659C /* RatingDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDistribution.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		F3CFB5BF2D5ED84E0083E353 /* Waver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3CFB5C22D5ED84E0083E353 /* WaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaverApp.swift; sourceTree = "<group>"; };
 		F3CFB5C62D5ED84F0083E353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F3CFB5C92D5ED84F0083E353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3CFB5D32D5ED9900083E353 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		F3CFB5D52D5ED9B30083E353 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
 		F3EC1FC02D7DB9B400BD694A /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
@@ -110,12 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EC1FB92D7D4B7700BD694A /* PostgREST in Frameworks */,
-				F3EC1FB72D7D4B7700BD694A /* Functions in Frameworks */,
-				F3EC1FBF2D7D4B7700BD694A /* Supabase in Frameworks */,
-				F3EC1FB52D7D4B7700BD694A /* Auth in Frameworks */,
-				F3EC1FBD2D7D4B7700BD694A /* Storage in Frameworks */,
-				F3EC1FBB2D7D4B7700BD694A /* Realtime in Frameworks */,
+				F3822A6E2D86869A00488DF0 /* PostgREST in Frameworks */,
+				F3822A6C2D86869A00488DF0 /* Functions in Frameworks */,
+				F3822A742D86869A00488DF0 /* Supabase in Frameworks */,
+				F3822A6A2D86869A00488DF0 /* Auth in Frameworks */,
+				F3822A722D86869A00488DF0 /* Storage in Frameworks */,
+				F3822A702D86869A00488DF0 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +190,7 @@
 		F3CFB5B62D5ED84E0083E353 = {
 			isa = PBXGroup;
 			children = (
+				F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */,
 				F3EC1FC02D7DB9B400BD694A /* Secrets.plist */,
 				F3CFB5C12D5ED84E0083E353 /* WaverApp */,
 				F3CFB5C02D5ED84E0083E353 /* Products */,
@@ -212,17 +213,8 @@
 				F3CFB5D12D5ED9520083E353 /* Services */,
 				F3CFB5D22D5ED95E0083E353 /* Views */,
 				F3CFB5C62D5ED84F0083E353 /* Assets.xcassets */,
-				F3CFB5C82D5ED84F0083E353 /* Preview Content */,
 			);
 			path = WaverApp;
-			sourceTree = "<group>";
-		};
-		F3CFB5C82D5ED84F0083E353 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F3CFB5C92D5ED84F0083E353 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F3CFB5D02D5ED9440083E353 /* Models */ = {
@@ -285,12 +277,12 @@
 			);
 			name = Waver;
 			packageProductDependencies = (
-				F3EC1FB42D7D4B7700BD694A /* Auth */,
-				F3EC1FB62D7D4B7700BD694A /* Functions */,
-				F3EC1FB82D7D4B7700BD694A /* PostgREST */,
-				F3EC1FBA2D7D4B7700BD694A /* Realtime */,
-				F3EC1FBC2D7D4B7700BD694A /* Storage */,
-				F3EC1FBE2D7D4B7700BD694A /* Supabase */,
+				F3822A692D86869A00488DF0 /* Auth */,
+				F3822A6B2D86869A00488DF0 /* Functions */,
+				F3822A6D2D86869A00488DF0 /* PostgREST */,
+				F3822A6F2D86869A00488DF0 /* Realtime */,
+				F3822A712D86869A00488DF0 /* Storage */,
+				F3822A732D86869A00488DF0 /* Supabase */,
 			);
 			productName = Waver;
 			productReference = F3CFB5BF2D5ED84E0083E353 /* Waver.app */;
@@ -321,7 +313,7 @@
 			);
 			mainGroup = F3CFB5B62D5ED84E0083E353;
 			packageReferences = (
-				F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = F3CFB5C02D5ED84E0083E353 /* Products */;
 			projectDirPath = "";
@@ -337,7 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3CFB5CA2D5ED84F0083E353 /* Preview Assets.xcassets in Resources */,
+				F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */,
 				F3EC1FC12D7DB9B400BD694A /* Secrets.plist in Resources */,
 				F3CFB5C72D5ED84F0083E353 /* Assets.xcassets in Resources */,
 			);
@@ -520,26 +512,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Waver/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Waver/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = Waver;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.Waver;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.waversurfreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -552,26 +546,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Waver/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Waver/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_CFBundleDisplayName = Waver;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.Waver;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.waversurfreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -603,7 +599,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+		F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
 			requirement = {
@@ -614,34 +610,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F3EC1FB42D7D4B7700BD694A /* Auth */ = {
+		F3822A692D86869A00488DF0 /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Auth;
 		};
-		F3EC1FB62D7D4B7700BD694A /* Functions */ = {
+		F3822A6B2D86869A00488DF0 /* Functions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Functions;
 		};
-		F3EC1FB82D7D4B7700BD694A /* PostgREST */ = {
+		F3822A6D2D86869A00488DF0 /* PostgREST */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = PostgREST;
 		};
-		F3EC1FBA2D7D4B7700BD694A /* Realtime */ = {
+		F3822A6F2D86869A00488DF0 /* Realtime */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Realtime;
 		};
-		F3EC1FBC2D7D4B7700BD694A /* Storage */ = {
+		F3822A712D86869A00488DF0 /* Storage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
 		};
-		F3EC1FBE2D7D4B7700BD694A /* Supabase */ = {
+		F3822A732D86869A00488DF0 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3EC1FB32D7D4B7700BD694A /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */

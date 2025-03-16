@@ -18,7 +18,8 @@ struct SignInView: View {
     @State private var isLoading = false
 
     @EnvironmentObject var userSession: UserSession
-    
+    @Environment(\.colorScheme) var colorScheme
+
     var isSignInEnabled: Bool {
         !email.isEmpty && !password.isEmpty && !isLoading
     }
@@ -26,10 +27,10 @@ struct SignInView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.black.ignoresSafeArea()
+                Color(.systemBackground).ignoresSafeArea()
 
                 VStack(spacing: 20) {
-                    Image("waver_logo")
+                    Image(colorScheme == .dark ? "waver_logo" : "waver_logo_black")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
@@ -42,30 +43,31 @@ struct SignInView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
+                        .foregroundColor(Color.primary)
 
                     Text("Log in to your Waver account")
                         .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.secondary)
 
                     VStack(spacing: 12) {
                         TextField("Email", text: $email)
-                            .tint(.white)
-                            .foregroundColor(.white)
+                            .tint(Color.primary)
+                            .foregroundColor(Color.primary)
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                             .keyboardType(.emailAddress)
                             .padding(18)
                             .frame(height: 50)
-                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white, lineWidth: 1))
+                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary, lineWidth: 1))
 
                         SecureField("Password", text: $password)
-                            .tint(.white)
-                            .foregroundColor(.white)
+                            .tint(Color.primary)
+                            .foregroundColor(Color.primary)
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                             .padding(18)
                             .frame(height: 50)
-                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white, lineWidth: 1))
+                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary, lineWidth: 1))
                     }
                     .padding(.horizontal, 20)
 
@@ -77,7 +79,7 @@ struct SignInView: View {
                         }) {
                             Text("Forgot your password?")
                                 .font(.footnote)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.secondary)
                         }
 
                         Button(action: {
@@ -102,8 +104,8 @@ struct SignInView: View {
                                     .padding()
                             }
                         }
-                        .background(isSignInEnabled ? .white : .white.opacity(0.2))
-                        .foregroundColor(isSignInEnabled ? .black : .gray)
+                        .background(isSignInEnabled ? Color.primary : Color.secondary.opacity(0.2))
+                        .foregroundColor(isSignInEnabled ? Color(.systemBackground) : .gray)
                         .cornerRadius(10)
                         .disabled(!isSignInEnabled)
 
@@ -112,7 +114,7 @@ struct SignInView: View {
                         }) {
                             Text("Don't have an account? **Create one**")
                                 .font(.footnote)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.primary)
                         }
                     }
                     .padding(.horizontal, 20)

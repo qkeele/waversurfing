@@ -12,18 +12,20 @@ struct ResetPasswordView: View {
     @State private var isLoading = false
     @StateObject private var toastManager = ToastManager()
 
+    @Environment(\.colorScheme) var colorScheme
+
     var isResetEnabled: Bool {
         !resetEmail.isEmpty && !isLoading
     }
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            
+            Color(.systemBackground).ignoresSafeArea()
+
             VStack(spacing: 20) {
                 Spacer()
-                
-                Image("waver_logo")
+
+                Image(colorScheme == .dark ? "waver_logo" : "waver_logo_black")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 60, height: 60)
@@ -31,22 +33,23 @@ struct ResetPasswordView: View {
                 Text("Reset Password")
                     .font(.title2)
                     .bold()
+                    .foregroundColor(Color.primary)
 
                 Text("Enter your email to receive a password reset link.")
                     .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 30)
 
                 TextField("Email", text: $resetEmail)
-                    .tint(.white)
-                    .foregroundColor(.white)
+                    .tint(Color.primary)
+                    .foregroundColor(Color.primary)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
                     .keyboardType(.emailAddress)
                     .padding()
                     .frame(height: 50)
-                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.white, lineWidth: 1))
+                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary, lineWidth: 1))
                     .padding(.horizontal, 20)
 
                 Spacer()
@@ -66,7 +69,7 @@ struct ResetPasswordView: View {
                     ZStack {
                         if isLoading {
                             ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color(.systemBackground)))
                         } else {
                             Text("Send Reset Link")
                                 .fontWeight(.bold)
@@ -75,21 +78,20 @@ struct ResetPasswordView: View {
                     .frame(maxWidth: .infinity)
                     .padding()
                 }
-                .background(isResetEnabled ? .white : .white.opacity(0.2))
-                .foregroundColor(isResetEnabled ? .black : .gray)
+                .background(isResetEnabled ? Color.primary : Color.secondary.opacity(0.2))
+                .foregroundColor(isResetEnabled ? Color(.systemBackground) : .gray)
                 .cornerRadius(10)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
                 .disabled(!isResetEnabled)
             }
 
-            // **Toast Notification - Now Positioned at the Very Top**
             VStack {
                 if toastManager.isShowing {
                     ToastView(message: toastManager.message, backgroundColor: toastManager.color)
-                        .frame(maxWidth: .infinity) // Make it full width
-                        .padding(.top, 50) // Push it to the top
-                        .transition(.move(edge: .top).combined(with: .opacity)) // Proper slide animation
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 50)
+                        .transition(.move(edge: .top).combined(with: .opacity))
                         .zIndex(2)
                 }
                 Spacer()
