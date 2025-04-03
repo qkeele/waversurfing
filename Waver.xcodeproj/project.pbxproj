@@ -23,13 +23,14 @@
 		F37267692D78295B004A81B0 /* ReportListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37267682D78295B004A81B0 /* ReportListToolbar.swift */; };
 		F372676B2D78297C004A81B0 /* ReportListFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */; };
 		F372676D2D78EAE8004A81B0 /* SurfDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */; };
-		F3822A6A2D86869A00488DF0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A692D86869A00488DF0 /* Auth */; };
-		F3822A6C2D86869A00488DF0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6B2D86869A00488DF0 /* Functions */; };
-		F3822A6E2D86869A00488DF0 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6D2D86869A00488DF0 /* PostgREST */; };
-		F3822A702D86869A00488DF0 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A6F2D86869A00488DF0 /* Realtime */; };
-		F3822A722D86869A00488DF0 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A712D86869A00488DF0 /* Storage */; };
-		F3822A742D86869A00488DF0 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A732D86869A00488DF0 /* Supabase */; };
 		F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */; };
+		F3822A792D9E5D8900488DF0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A782D9E5D8900488DF0 /* Auth */; };
+		F3822A7B2D9E5D8900488DF0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A7A2D9E5D8900488DF0 /* Functions */; };
+		F3822A7D2D9E5D8900488DF0 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A7C2D9E5D8900488DF0 /* PostgREST */; };
+		F3822A7F2D9E5D8900488DF0 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A7E2D9E5D8900488DF0 /* Realtime */; };
+		F3822A812D9E5D8900488DF0 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A802D9E5D8900488DF0 /* Storage */; };
+		F3822A832D9E5D8900488DF0 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A822D9E5D8900488DF0 /* Supabase */; };
+		F3822A852D9E5F2300488DF0 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3822A842D9E5F2300488DF0 /* Secrets.plist */; };
 		F38887F82D6BCA9F0097F3BE /* ValidationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */; };
 		F38887FA2D6BCAD30097F3BE /* AuthHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */; };
 		F3A830F92D666F150022659C /* RatingDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A830F82D666F150022659C /* RatingDistribution.swift */; };
@@ -52,7 +53,6 @@
 		F3CFB5C72D5ED84F0083E353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3CFB5C62D5ED84F0083E353 /* Assets.xcassets */; };
 		F3CFB5D42D5ED9900083E353 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFB5D32D5ED9900083E353 /* Spot.swift */; };
 		F3CFB5D62D5ED9B30083E353 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CFB5D52D5ED9B30083E353 /* SupabaseService.swift */; };
-		F3EC1FC12D7DB9B400BD694A /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3EC1FC02D7DB9B400BD694A /* Secrets.plist */; };
 		F3F5A1CD2D7007CC00FC10ED /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A1CC2D7007CC00FC10ED /* UserSession.swift */; };
 		F3FA3C8B2D6FBDA10014976B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA3C8A2D6FBDA10014976B /* ToastView.swift */; };
 		F3FA3C8F2D6FCCD60014976B /* RegistrationConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA3C8E2D6FCCD60014976B /* RegistrationConfirmationView.swift */; };
@@ -76,6 +76,7 @@
 		F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListFloatingButton.swift; sourceTree = "<group>"; };
 		F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfDataManager.swift; sourceTree = "<group>"; };
 		F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3822A842D9E5F2300488DF0 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationIcon.swift; sourceTree = "<group>"; };
 		F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelpers.swift; sourceTree = "<group>"; };
 		F3A830F82D666F150022659C /* RatingDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDistribution.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		F3CFB5C62D5ED84F0083E353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3CFB5D32D5ED9900083E353 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		F3CFB5D52D5ED9B30083E353 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
-		F3EC1FC02D7DB9B400BD694A /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		F3F5A1CC2D7007CC00FC10ED /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		F3FA3C8A2D6FBDA10014976B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		F3FA3C8E2D6FCCD60014976B /* RegistrationConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfirmationView.swift; sourceTree = "<group>"; };
@@ -110,12 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3822A6E2D86869A00488DF0 /* PostgREST in Frameworks */,
-				F3822A6C2D86869A00488DF0 /* Functions in Frameworks */,
-				F3822A742D86869A00488DF0 /* Supabase in Frameworks */,
-				F3822A6A2D86869A00488DF0 /* Auth in Frameworks */,
-				F3822A722D86869A00488DF0 /* Storage in Frameworks */,
-				F3822A702D86869A00488DF0 /* Realtime in Frameworks */,
+				F3822A7D2D9E5D8900488DF0 /* PostgREST in Frameworks */,
+				F3822A7B2D9E5D8900488DF0 /* Functions in Frameworks */,
+				F3822A832D9E5D8900488DF0 /* Supabase in Frameworks */,
+				F3822A792D9E5D8900488DF0 /* Auth in Frameworks */,
+				F3822A812D9E5D8900488DF0 /* Storage in Frameworks */,
+				F3822A7F2D9E5D8900488DF0 /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */,
-				F3EC1FC02D7DB9B400BD694A /* Secrets.plist */,
+				F3822A842D9E5F2300488DF0 /* Secrets.plist */,
 				F3CFB5C12D5ED84E0083E353 /* WaverApp */,
 				F3CFB5C02D5ED84E0083E353 /* Products */,
 			);
@@ -277,12 +277,12 @@
 			);
 			name = Waver;
 			packageProductDependencies = (
-				F3822A692D86869A00488DF0 /* Auth */,
-				F3822A6B2D86869A00488DF0 /* Functions */,
-				F3822A6D2D86869A00488DF0 /* PostgREST */,
-				F3822A6F2D86869A00488DF0 /* Realtime */,
-				F3822A712D86869A00488DF0 /* Storage */,
-				F3822A732D86869A00488DF0 /* Supabase */,
+				F3822A782D9E5D8900488DF0 /* Auth */,
+				F3822A7A2D9E5D8900488DF0 /* Functions */,
+				F3822A7C2D9E5D8900488DF0 /* PostgREST */,
+				F3822A7E2D9E5D8900488DF0 /* Realtime */,
+				F3822A802D9E5D8900488DF0 /* Storage */,
+				F3822A822D9E5D8900488DF0 /* Supabase */,
 			);
 			productName = Waver;
 			productReference = F3CFB5BF2D5ED84E0083E353 /* Waver.app */;
@@ -313,7 +313,7 @@
 			);
 			mainGroup = F3CFB5B62D5ED84E0083E353;
 			packageReferences = (
-				F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = F3CFB5C02D5ED84E0083E353 /* Products */;
 			projectDirPath = "";
@@ -330,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */,
-				F3EC1FC12D7DB9B400BD694A /* Secrets.plist in Resources */,
+				F3822A852D9E5F2300488DF0 /* Secrets.plist in Resources */,
 				F3CFB5C72D5ED84F0083E353 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,7 +599,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+		F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
 			requirement = {
@@ -610,34 +610,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F3822A692D86869A00488DF0 /* Auth */ = {
+		F3822A782D9E5D8900488DF0 /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Auth;
 		};
-		F3822A6B2D86869A00488DF0 /* Functions */ = {
+		F3822A7A2D9E5D8900488DF0 /* Functions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Functions;
 		};
-		F3822A6D2D86869A00488DF0 /* PostgREST */ = {
+		F3822A7C2D9E5D8900488DF0 /* PostgREST */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = PostgREST;
 		};
-		F3822A6F2D86869A00488DF0 /* Realtime */ = {
+		F3822A7E2D9E5D8900488DF0 /* Realtime */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Realtime;
 		};
-		F3822A712D86869A00488DF0 /* Storage */ = {
+		F3822A802D9E5D8900488DF0 /* Storage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Storage;
 		};
-		F3822A732D86869A00488DF0 /* Supabase */ = {
+		F3822A822D9E5D8900488DF0 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3822A682D86869A00488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			package = F3822A772D9E5D8900488DF0 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
