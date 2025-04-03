@@ -10,28 +10,34 @@ import SwiftUI
 struct ReportView: View {
     @EnvironmentObject var userSession: UserSession
     @State private var username: String? = nil
-    
+
     let report: Report
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
                 Text(username ?? "")
-                    .font(.headline)
-
+                    .font(.subheadline)
+                    .bold()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                
+                Text(formatTimestamp(report.timestamp))
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+            }
+            
+            HStack(spacing: 4) {
                 Text(textForRating(report.rating))
                     .foregroundColor(colorForRating(report.rating))
                     .bold()
-
+                
+                Text("•")
+                
                 Text("\(textForHeight(Double(report.height))) and \(textForCrowd(Double(report.crowd)))")
             }
             .font(.subheadline)
-
-            // ✅ Display Timestamp
-            Text(formatTimestamp(report.timestamp))
-                .font(.footnote)
-                .foregroundColor(.gray)
-
+            
             if let comment = report.comment, !comment.isEmpty {
                 Text(comment)
                     .font(.subheadline)
@@ -48,10 +54,9 @@ struct ReportView: View {
         }
     }
 
-    /// ✅ Formats the timestamp for better readability
     private func formatTimestamp(_ date: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a" // Example: 2:15 PM
+        formatter.dateFormat = "h:mm a"
         return formatter.string(from: date)
     }
 }

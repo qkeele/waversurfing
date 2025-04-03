@@ -39,11 +39,21 @@ let regionTree: [RegionNode] = [
             RegionNode(
                 name: "California",
                 children: [
-                    RegionNode(name: "Los Angeles County", children: []),
-                    RegionNode(name: "Orange County", children: []),
                     RegionNode(name: "San Diego County", children: []),
+                    RegionNode(name: "Orange County", children: []),
+                    RegionNode(name: "Los Angeles County", children: []),
+                    RegionNode(name: "Ventura County", children: []),
+                    RegionNode(name: "Santa Barbara County", children: []),
+                    RegionNode(name: "San Luis Obisbo County", children: []),
+                    RegionNode(name: "Monterey County", children: []),
                     RegionNode(name: "Santa Cruz County", children: []),
-                    RegionNode(name: "Ventura County", children: [])
+                    RegionNode(name: "San Mateo County", children: []),
+                    RegionNode(name: "San Francisco County", children: []),
+                    RegionNode(name: "Marin County", children: []),
+                    RegionNode(name: "Sonoma County", children: []),
+                    RegionNode(name: "Mendocino County", children: []),
+                    RegionNode(name: "Humboldt County", children: []),
+                    RegionNode(name: "Del Norte County", children: [])
                 ]
             ),
             RegionNode(name: "Florida",       children: []),

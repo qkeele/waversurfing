@@ -9,31 +9,48 @@ import SwiftUI
 
 struct ReportConfirmationView: View {
     var onDismiss: () -> Void
-    @Environment(\.colorScheme) var colorScheme // ✅ Detect system theme
+    
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         ZStack {
-            // ✅ Uses system background color
-            (colorScheme == .dark ? Color.black : Color.white)
+            Color(.systemBackground)
                 .ignoresSafeArea()
 
-            VStack(spacing: 20) {
+            VStack(spacing: 0) {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        dismiss()
+                        onDismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title)
+                            .foregroundColor(.primary)
+                    }
+                    .padding([.top, .trailing])
+                }
+
                 Spacer()
 
-                Image(systemName: "checkmark.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60, height: 60)
-                    .foregroundColor(.green)
+                // Main content, styled like RegistrationConfirmationView
+                VStack(spacing: 20) {
+                    Image(systemName: "checkmark.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.green)
 
-                Text("Report submitted!")
-                    .font(.title2)
-                    .bold()
-                    .foregroundColor(.primary)
+                    Text("Report submitted!")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.primary)
+                }
 
                 Spacer()
             }
-            .padding()
         }
     }
 }

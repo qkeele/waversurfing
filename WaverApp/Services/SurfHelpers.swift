@@ -46,16 +46,16 @@ func textForCrowd(_ averageCrowd: Double) -> String {
 func textForHeight(_ averageHeight: Double) -> String {
     let waveInt = Int(averageHeight.rounded())
     switch waveInt {
-    case 1: return "Ankle high"
-    case 2: return "Knee high"
-    case 3: return "Thigh high"
-    case 4: return "Waist high"
-    case 5: return "Chest high"
-    case 6: return "Head high"
-    case 7: return "Overhead"
-    case 8: return "Well overhead"
-    case 9: return "Double overhead"
-    default: return "Flat"
+    case 1: return "ankle high"
+    case 2: return "knee high"
+    case 3: return "thigh high"
+    case 4: return "waist high"
+    case 5: return "chest high"
+    case 6: return "head high"
+    case 7: return "overhead"
+    case 8: return "well overhead"
+    case 9: return "double overhead"
+    default: return "flat"
     }
 }
 
