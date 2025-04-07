@@ -30,9 +30,14 @@ class SupabaseService: ObservableObject {
 
     func registerUser(email: String, password: String, username: String) async throws {
         // Sign up in Supabase Auth
-        let authResponse = try await client.auth.signUp(email: email, password: password)
+        let authResponse = try await client.auth.signUp(
+            email: email,
+            password: password,
+            redirectTo: URL(string: "https://www.waversurfing.com/confirmation")!
+        )
+
         let authID = authResponse.user.id
-        
+
         // Immediately insert into 'users' table
         try await client
             .from("users")
@@ -43,6 +48,12 @@ class SupabaseService: ObservableObject {
                 "timestamp": Date().ISO8601Format()
             ])
             .execute()
+    }
+    
+    func resendConfirmationEmail(email: String) async throws {
+        try await client.auth.resend(
+            email: email, type: .signup
+        )
     }
 
     func sendPasswordReset(email: String) async throws {

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RegistrationConfirmationView: View {
-    var didDismiss: () -> Void
 
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) private var dismiss
@@ -26,7 +25,6 @@ struct RegistrationConfirmationView: View {
                     Button {
                         // Close this view, then notify parent
                         dismiss()
-                        didDismiss()
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.title)

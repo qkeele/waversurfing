@@ -88,7 +88,15 @@ struct SignInView: View {
                                 do {
                                     try await userSession.signIn(email: email, password: password)
                                 } catch {
-                                    errorMessage = error.localizedDescription
+                                    let message = error.localizedDescription.lowercased()
+
+                                    if message.contains("email") && message.contains("confirm") {
+                                        try? await SupabaseService.shared.resendConfirmationEmail(email: email)
+                                        errorMessage = "Your email isn't confirmed yet. We've sent you a new confirmation link—be sure to check your spam folder."
+                                    } else {
+                                        errorMessage = error.localizedDescription
+                                    }
+
                                     showingErrorAlert = true
                                 }
                                 isLoading = false

@@ -12,6 +12,9 @@ struct RegisterView: View {
     @State private var username = ""
     @State private var email = ""
     @State private var password = ""
+    @State private var isPasswordVisible = false
+    @FocusState private var isPasswordFocused: Bool
+
 
     @ObservedObject private var usernameValidator = UsernameValidator()
     @Binding var isRegistering: Bool
@@ -75,11 +78,42 @@ struct RegisterView: View {
                         .padding(18)
                         .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary))
 
-                        SecureField("Password", text: $password)
+                        ZStack(alignment: .trailing) {
+                            Group {
+                                if isPasswordVisible {
+                                    // Normal TextField
+                                    TextField("Password", text: $password)
+                                        .focused($isPasswordFocused)
+                                } else {
+                                    // SecureField
+                                    SecureField("Password", text: $password)
+                                        .focused($isPasswordFocused)
+                                }
+                            }
+                            // Common modifiers for both fields
                             .tint(Color.primary)
                             .foregroundColor(Color.primary)
                             .padding(18)
                             .background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary))
+
+                            // Eye toggle button
+                            Button {
+                                let wasFocused = isPasswordFocused
+                                isPasswordVisible.toggle()
+
+                                // If it was focused before toggling, refocus to keep the keyboard open
+                                if wasFocused {
+                                    DispatchQueue.main.async {
+                                        isPasswordFocused = true
+                                    }
+                                }
+                            } label: {
+                                Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                    .padding(.trailing, 18)  // Matches the text padding
+                                    .foregroundColor(.primary)
+                            }
+                        }
+
 
                         VStack(alignment: .leading, spacing: 4) {
                             criteriaRow(text: "Includes letters, a number, and a symbol",
@@ -140,12 +174,10 @@ struct RegisterView: View {
             } message: {
                 Text(errorMessage)
             }
-            .sheet(isPresented: $showConfirmation) {
-                RegistrationConfirmationView(didDismiss: {
-                    DispatchQueue.main.async {
-                        isRegistering = false
-                    }
-                })
+            .sheet(isPresented: $showConfirmation, onDismiss: {
+                isRegistering = false
+            }) {
+                RegistrationConfirmationView()
             }
         }
     }
