@@ -24,11 +24,33 @@ struct WaverUser: Codable {
 
     static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Matches Supabase format
-        formatter.locale = Locale(identifier: "en_US_POSIX") // Ensures strict formatting
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        decoder.dateDecodingStrategy = .formatted(formatter)
+
+        decoder.dateDecodingStrategy = .custom { decoder in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+
+            let primaryFormat = DateFormatter()
+            primaryFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            primaryFormat.locale = Locale(identifier: "en_US_POSIX")
+            primaryFormat.timeZone = TimeZone(secondsFromGMT: 0)
+
+            let fallbackFormat = DateFormatter()
+            fallbackFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            fallbackFormat.locale = Locale(identifier: "en_US_POSIX")
+            fallbackFormat.timeZone = TimeZone(secondsFromGMT: 0)
+
+            if let date = primaryFormat.date(from: dateString) {
+                return date
+            } else if let fallbackDate = fallbackFormat.date(from: dateString) {
+                return fallbackDate
+            }
+
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Cannot decode date string: \(dateString)"
+            )
+        }
+
         return decoder
     }()
 }
