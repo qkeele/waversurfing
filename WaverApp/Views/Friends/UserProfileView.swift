@@ -9,8 +9,10 @@ import SwiftUI
 
 struct UserProfileView: View {
     let user: WaverUser
+    @EnvironmentObject var userSession: UserSession
     @ObservedObject var dataManager = SurfDataManager()
     @StateObject private var reportService = ReportService()
+    @StateObject private var toastManager = ToastManager()
     @Environment(\.dismiss) private var dismiss
     @State private var reports: [(Report, String?)] = []
     @State private var isLoading = true
@@ -35,12 +37,17 @@ struct UserProfileView: View {
 
                 Spacer()
 
-                Button(action: {
-                    // Placeholder for future action (e.g. follow, message)
-                }) {
-                    Image(systemName: "plus.circle")
-                        .font(.title2)
-                        .foregroundColor(.primary)
+                FriendButtonView(
+                    myUserId: userSession.currentUser?.id ?? user.id,
+                    otherUserId: user.id,
+                    toastManager: toastManager
+                )
+                if toastManager.isShowing {
+                    ToastView(message: toastManager.message, backgroundColor: toastManager.color)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 50)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                        .zIndex(10)
                 }
             }
             .padding()
