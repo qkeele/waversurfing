@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var dataManager: SurfDataManager
+    @EnvironmentObject var userSession: UserSession
     @StateObject private var viewModel = SearchResultsViewModel()
 
     let regions = regionTree

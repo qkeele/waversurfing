@@ -16,6 +16,7 @@ struct Report: Identifiable, Codable {
     let crowd: Int
     let comment: String?
     let timestamp: Date
+    let visibility: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -26,6 +27,7 @@ struct Report: Identifiable, Codable {
         case crowd
         case comment
         case timestamp
+        case visibility
     }
 
     static let decoder: JSONDecoder = {
@@ -33,7 +35,7 @@ struct Report: Identifiable, Codable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(secondsFromGMT: 0) // Ensure UTC alignment
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         decoder.dateDecodingStrategy = .formatted(formatter)
         return decoder
     }()

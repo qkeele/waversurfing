@@ -15,7 +15,7 @@ enum FriendshipStatus {
     case friends
 }
 
-final class FriendsService {
+final class FriendsService: ObservableObject {
     private let client = SupabaseService.shared.client
 
     func checkFriendshipStatus(myId: UUID, otherId: UUID) async throws -> FriendshipStatus {
@@ -80,10 +80,25 @@ final class FriendsService {
         try await client
             .from("friends")
             .delete()
-            .or("""
-                and(requester_id.eq.\(myId),receiver_id.eq.\(otherUserId),status.eq.accepted),
-                and(requester_id.eq.\(otherUserId),receiver_id.eq.\(myId),status.eq.accepted)
-                """)
+            .or("and(requester_id.eq.\(myId),receiver_id.eq.\(otherUserId)),and(requester_id.eq.\(otherUserId),receiver_id.eq.\(myId))")
+            .filter("status", operator: "eq", value: "accepted")
             .execute()
     }
+    
+    func getIncomingFriendRequests(for userId: UUID) async throws -> [WaverUser] {
+        let response = try await client
+            .rpc("get_incoming_requests", params: ["user_id": userId.uuidString])
+            .execute()
+
+        return try WaverUser.decoder.decode([WaverUser].self, from: response.data)
+    }
+
+    func getAcceptedFriends(for userId: UUID) async throws -> [WaverUser] {
+        let response = try await client
+            .rpc("get_accepted_friends", params: ["user_id": userId.uuidString])
+            .execute()
+
+        return try WaverUser.decoder.decode([WaverUser].self, from: response.data)
+    }
+
 }

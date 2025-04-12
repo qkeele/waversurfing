@@ -29,6 +29,14 @@
 		F37267692D78295B004A81B0 /* ReportListToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37267682D78295B004A81B0 /* ReportListToolbar.swift */; };
 		F372676B2D78297C004A81B0 /* ReportListFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */; };
 		F372676D2D78EAE8004A81B0 /* SurfDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */; };
+		F376F6892DA9C14200755376 /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6882DA9C14200755376 /* FriendsService.swift */; };
+		F376F68B2DA9C26900755376 /* FriendButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F68A2DA9C26900755376 /* FriendButtonView.swift */; };
+		F376F68D2DA9C28300755376 /* FriendButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F68C2DA9C28300755376 /* FriendButtonViewModel.swift */; };
+		F376F68F2DAA2C6600755376 /* FloatingToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F68E2DAA2C6600755376 /* FloatingToastView.swift */; };
+		F376F6922DAA2CAA00755376 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6912DAA2CAA00755376 /* ToastManager.swift */; };
+		F376F6962DAA420300755376 /* FriendManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6952DAA420300755376 /* FriendManagementView.swift */; };
+		F376F6982DAA552000755376 /* RequestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6972DAA552000755376 /* RequestRow.swift */; };
+		F376F69A2DAA790200755376 /* VisibilitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6992DAA790200755376 /* VisibilitySelectorView.swift */; };
 		F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */; };
 		F3822A792D9E5D8900488DF0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A782D9E5D8900488DF0 /* Auth */; };
 		F3822A7B2D9E5D8900488DF0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A7A2D9E5D8900488DF0 /* Functions */; };
@@ -87,6 +95,14 @@
 		F37267682D78295B004A81B0 /* ReportListToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListToolbar.swift; sourceTree = "<group>"; };
 		F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListFloatingButton.swift; sourceTree = "<group>"; };
 		F372676C2D78EAE8004A81B0 /* SurfDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfDataManager.swift; sourceTree = "<group>"; };
+		F376F6882DA9C14200755376 /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsService.swift; sourceTree = "<group>"; };
+		F376F68A2DA9C26900755376 /* FriendButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendButtonView.swift; sourceTree = "<group>"; };
+		F376F68C2DA9C28300755376 /* FriendButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendButtonViewModel.swift; sourceTree = "<group>"; };
+		F376F68E2DAA2C6600755376 /* FloatingToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingToastView.swift; sourceTree = "<group>"; };
+		F376F6912DAA2CAA00755376 /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		F376F6952DAA420300755376 /* FriendManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendManagementView.swift; sourceTree = "<group>"; };
+		F376F6972DAA552000755376 /* RequestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRow.swift; sourceTree = "<group>"; };
+		F376F6992DAA790200755376 /* VisibilitySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilitySelectorView.swift; sourceTree = "<group>"; };
 		F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3822A842D9E5F2300488DF0 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationIcon.swift; sourceTree = "<group>"; };
@@ -140,7 +156,7 @@
 				F34E9E0E2D68938600C2D944 /* ProfileView.swift */,
 				F34E9E102D6893BC00C2D944 /* ProfileReportView.swift */,
 				F34E9E1E2D6B27AE00C2D944 /* PreferencesView.swift */,
-				F31864D42DA85220007D997D /* UserProfileView.swift */,
+				F376F6952DAA420300755376 /* FriendManagementView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -166,6 +182,27 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		F376F6872DA9C13100755376 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				F376F68A2DA9C26900755376 /* FriendButtonView.swift */,
+				F376F68C2DA9C28300755376 /* FriendButtonViewModel.swift */,
+				F31864D42DA85220007D997D /* UserProfileView.swift */,
+				F376F6972DAA552000755376 /* RequestRow.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		F376F6902DAA2C7C00755376 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				F376F6912DAA2CAA00755376 /* ToastManager.swift */,
+				F3FA3C8A2D6FBDA10014976B /* ToastView.swift */,
+				F376F68E2DAA2C6600755376 /* FloatingToastView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		F3A830FA2D666F300022659C /* Spot */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +223,7 @@
 				F34E9E162D69AC6900C2D944 /* ReportSelectionView.swift */,
 				F34E9E182D69AC8500C2D944 /* CommentInputView.swift */,
 				F306496A2D7B9F6C00363D8C /* ReportConfirmationView.swift */,
+				F376F6992DAA790200755376 /* VisibilitySelectorView.swift */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -258,6 +296,7 @@
 				F3C0BA292D5F3C5000350C01 /* SpotService.swift */,
 				F3C0BA252D5F3A7200350C01 /* ReportService.swift */,
 				F3C0BA272D5F3ABA00350C01 /* FavoriteService.swift */,
+				F376F6882DA9C14200755376 /* FriendsService.swift */,
 				F3A831022D66EDC50022659C /* SurfHelpers.swift */,
 				F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */,
 			);
@@ -271,9 +310,10 @@
 				F34E9E202D6B27DC00C2D944 /* Home */,
 				F34E9E0D2D68937900C2D944 /* Profile */,
 				F3A830FF2D66E1A90022659C /* Report */,
+				F376F6872DA9C13100755376 /* Friends */,
 				F3A830FA2D666F300022659C /* Spot */,
 				F3C0BA352D65DAC800350C01 /* Search */,
-				F3FA3C8A2D6FBDA10014976B /* ToastView.swift */,
+				F376F6902DAA2C7C00755376 /* Toast */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +402,7 @@
 			files = (
 				F3C0BA372D65DAD900350C01 /* RegionListView.swift in Sources */,
 				F34E9E232D6B3B1F00C2D944 /* ResetPasswordView.swift in Sources */,
+				F376F6982DAA552000755376 /* RequestRow.swift in Sources */,
 				F34E9E252D6B467F00C2D944 /* RegisterView.swift in Sources */,
 				F306496B2D7B9F6C00363D8C /* ReportConfirmationView.swift in Sources */,
 				F31864CB2DA52B17007D997D /* SpotRow.swift in Sources */,
@@ -376,9 +417,12 @@
 				F372676B2D78297C004A81B0 /* ReportListFloatingButton.swift in Sources */,
 				F3A831032D66EDC50022659C /* SurfHelpers.swift in Sources */,
 				F34E9E132D69278B00C2D944 /* SpotListView.swift in Sources */,
+				F376F69A2DAA790200755376 /* VisibilitySelectorView.swift in Sources */,
+				F376F68B2DA9C26900755376 /* FriendButtonView.swift in Sources */,
 				F3C0BA342D65DA7700350C01 /* RegionNode.swift in Sources */,
 				F34E9E0C2D672E2A00C2D944 /* ReportListView.swift in Sources */,
 				F3F5A1CD2D7007CC00FC10ED /* UserSession.swift in Sources */,
+				F376F6892DA9C14200755376 /* FriendsService.swift in Sources */,
 				F34E9E192D69AC8500C2D944 /* CommentInputView.swift in Sources */,
 				F3CFB5D42D5ED9900083E353 /* Spot.swift in Sources */,
 				F3A830F92D666F150022659C /* RatingDistribution.swift in Sources */,
@@ -386,6 +430,7 @@
 				F3FA3C8F2D6FCCD60014976B /* RegistrationConfirmationView.swift in Sources */,
 				F3A831012D66E1C00022659C /* ReportView.swift in Sources */,
 				F372676D2D78EAE8004A81B0 /* SurfDataManager.swift in Sources */,
+				F376F6922DAA2CAA00755376 /* ToastManager.swift in Sources */,
 				F34E9E172D69AC6900C2D944 /* ReportSelectionView.swift in Sources */,
 				F3C0BA1E2D5EE7A800350C01 /* WaverUser.swift in Sources */,
 				F3C0BA2C2D64839200350C01 /* SignInView.swift in Sources */,
@@ -393,6 +438,8 @@
 				F38887FA2D6BCAD30097F3BE /* AuthHelpers.swift in Sources */,
 				F34E9E152D69853C00C2D944 /* CreateReportView.swift in Sources */,
 				F3C0BA262D5F3A7200350C01 /* ReportService.swift in Sources */,
+				F376F68D2DA9C28300755376 /* FriendButtonViewModel.swift in Sources */,
+				F376F6962DAA420300755376 /* FriendManagementView.swift in Sources */,
 				F37267692D78295B004A81B0 /* ReportListToolbar.swift in Sources */,
 				F31864CD2DA52B23007D997D /* UserRow.swift in Sources */,
 				F3CFB5C32D5ED84E0083E353 /* WaverApp.swift in Sources */,
@@ -401,6 +448,7 @@
 				F31864CF2DA52B58007D997D /* SearchType.swift in Sources */,
 				F3FA3C8B2D6FBDA10014976B /* ToastView.swift in Sources */,
 				F306496D2D7BE1A300363D8C /* WaverSplashScreenView.swift in Sources */,
+				F376F68F2DAA2C6600755376 /* FloatingToastView.swift in Sources */,
 				F34E9E1F2D6B27AE00C2D944 /* PreferencesView.swift in Sources */,
 				F3C0BA202D5EE8B400350C01 /* Report.swift in Sources */,
 				F3C0BA2A2D5F3C5000350C01 /* SpotService.swift in Sources */,

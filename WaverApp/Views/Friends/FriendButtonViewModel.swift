@@ -37,6 +37,11 @@ final class FriendButtonViewModel: ObservableObject {
     }
 
     func handleAddOrAccept(myId: UUID, otherId: UUID, toastManager: ToastManager) async {
+        if myId == otherId {
+            toastManager.showToast(message: "Nice try kook", color: .gray)
+            return
+        }
+
         do {
             if friendshipStatus == .requestReceived {
                 try await service.acceptFriendRequest(myId: myId, otherId: otherId)
@@ -52,11 +57,12 @@ final class FriendButtonViewModel: ObservableObject {
         }
     }
 
+
     func handleCancel(myId: UUID, otherId: UUID, toastManager: ToastManager) async {
         do {
             try await service.cancelFriendRequest(myId: myId, otherUserId: otherId)
             friendshipStatus = .notFriends
-            toastManager.showToast(message: "Request canceled", color: .green)
+            toastManager.showToast(message: "Request canceled", color: .red)
         } catch {
             toastManager.showToast(message: "Error: \(error.localizedDescription)", color: .red)
         }
@@ -66,7 +72,7 @@ final class FriendButtonViewModel: ObservableObject {
         do {
             try await service.removeFriend(myId: myId, otherUserId: otherId)
             friendshipStatus = .notFriends
-            toastManager.showToast(message: "Friend removed", color: .green)
+            toastManager.showToast(message: "Friend removed", color: .red)
         } catch {
             toastManager.showToast(message: "Error: \(error.localizedDescription)", color: .red)
         }

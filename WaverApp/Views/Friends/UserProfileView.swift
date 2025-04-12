@@ -37,17 +37,12 @@ struct UserProfileView: View {
 
                 Spacer()
 
-                FriendButtonView(
-                    myUserId: userSession.currentUser?.id ?? user.id,
-                    otherUserId: user.id,
-                    toastManager: toastManager
-                )
-                if toastManager.isShowing {
-                    ToastView(message: toastManager.message, backgroundColor: toastManager.color)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 50)
-                        .transition(.move(edge: .top).combined(with: .opacity))
-                        .zIndex(10)
+                if userSession.currentUser?.id != user.id {
+                    FriendButtonView(
+                        myUserId: userSession.currentUser?.id ?? user.id,
+                        otherUserId: user.id,
+                        toastManager: toastManager
+                    )
                 }
             }
             .padding()
@@ -79,6 +74,14 @@ struct UserProfileView: View {
             await fetchReports() // ✅ Use the same fetch logic from ProfileView
         }
         .navigationBarHidden(true)
+        .overlay(alignment: .topTrailing) {
+            if toastManager.isShowing {
+                FloatingToastView(message: toastManager.message, backgroundColor: toastManager.color)
+                    .padding(.top, 8)
+                    .padding(.trailing, 12)
+                    .zIndex(999)
+            }
+        }
     }
 
     // ✅ Copied directly from ProfileView

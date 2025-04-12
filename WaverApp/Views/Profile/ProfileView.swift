@@ -15,6 +15,7 @@ struct ProfileView: View {
     @State private var reports: [(Report, String?)] = [] // ✅ Store reports & spot names
     @State private var isLoading = true // ✅ Track loading state
     @State private var isPreferencesPresented = false // ✅ Toggle PreferencesView
+    @State private var isFriendsPresented = false
 
     var body: some View {
         VStack {
@@ -28,6 +29,17 @@ struct ProfileView: View {
                     .minimumScaleFactor(0.5)
 
                 Spacer()
+                
+                // 👥 Friends Button
+                Button(action: {
+                    isFriendsPresented.toggle()
+                }) {
+                    Image(systemName: "person.2.fill")
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                }
+                .padding(.trailing, 8)
+
 
                 // ⚙️ Preferences Button
                 Button(action: {
@@ -75,6 +87,9 @@ struct ProfileView: View {
         // ✅ Show PreferencesView when toggled
         .sheet(isPresented: $isPreferencesPresented) {
             PreferencesView()
+        }
+        .sheet(isPresented: $isFriendsPresented) {
+            FriendManagementView()
         }
     }
 

@@ -20,7 +20,7 @@ class ReportService: ObservableObject {
             .value
     }
     
-    func addReport(forUser userId: UUID, spotId: UUID, rating: Int, height: Int, crowd: Int, comment: String?) async throws {
+    func addReport(forUser userId: UUID, spotId: UUID, rating: Int, height: Int, crowd: Int, comment: String?, visibility: String?) async throws {
         let newReport = Report(
             id: UUID(),
             user_id: userId,
@@ -29,7 +29,8 @@ class ReportService: ObservableObject {
             height: height,
             crowd: crowd,
             comment: comment,
-            timestamp: Date() // ✅ Automatically adds timestamp
+            timestamp: Date(), 
+            visibility: visibility
         )
 
         try await client
@@ -73,8 +74,6 @@ class ReportService: ObservableObject {
         // ✅ `lastReport.timestamp` is already a Date, no conversion needed
         return Date().timeIntervalSince(lastReport.timestamp) >= 1800
     }
-
-
     
     func fetchReportsForSpotToday(spotId: UUID) async throws -> [Report] {
         // ✅ Get today's date at midnight

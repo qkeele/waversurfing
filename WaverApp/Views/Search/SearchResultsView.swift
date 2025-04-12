@@ -10,22 +10,22 @@ import SwiftUI
 struct SearchResultsView: View {
     @ObservedObject var viewModel: SearchResultsViewModel
     @EnvironmentObject var dataManager: SurfDataManager
+    @EnvironmentObject var userSession: UserSession
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 12) {
             if viewModel.isLoading {
-                Spacer()
-                ProgressView()
-                    .padding()
-                Spacer()
+                HStack {
+                    Spacer()
+                    ProgressView()
+                        .scaleEffect(1)
+                        .padding(.top, 12)
+                    Spacer()
+                }
             } else if let error = viewModel.errorMessage {
                 Text("Error: \(error)")
                     .foregroundColor(.red)
-                    .padding()
-            } else if viewModel.spotResults.isEmpty && viewModel.userResults.isEmpty {
-                Text("No results")
-                    .foregroundColor(.gray)
-                    .padding()
+                    .padding(.top, 12)
             } else {
                 List {
                     if viewModel.searchType == .spots {
@@ -41,7 +41,9 @@ struct SearchResultsView: View {
                         }
                     } else {
                         ForEach(viewModel.userResults, id: \.id) { user in
-                            NavigationLink(destination: UserProfileView(user: user)) {
+                            NavigationLink(destination: UserProfileView(user: user)
+                                .environmentObject(userSession)
+                            ) {
                                 Text(user.username)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }

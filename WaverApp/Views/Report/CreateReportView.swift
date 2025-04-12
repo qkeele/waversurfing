@@ -17,6 +17,7 @@ struct CreateReportView: View {
     @State private var selectedRating: Int? = nil
     @State private var selectedHeight: Int? = nil
     @State private var selectedCrowd: Int? = nil
+    @State private var selectedVisibility: String? = "public"
     @State private var comment: String = ""
     @State private var isSubmitting = false // ✅ Track submission state
     @State private var showConfirmation = false // ✅ State for confirmation modal
@@ -39,8 +40,10 @@ struct CreateReportView: View {
                             selectedCrowd: $selectedCrowd,
                             colorScheme: colorScheme
                         )
-                        
+                        Spacer()
                         CommentInputView(comment: $comment)
+                        Spacer()
+                        VisibilitySelectorView(selectedVisibility: $selectedVisibility)
                         Spacer()
                         
                         Button(action: submitReport) {
@@ -92,7 +95,7 @@ struct CreateReportView: View {
     }
 
     private func submitReport() {
-        guard let rating = selectedRating, let height = selectedHeight, let crowd = selectedCrowd else { return }
+        guard let rating = selectedRating, let height = selectedHeight, let crowd = selectedCrowd, let visibility = selectedVisibility else { return }
         guard let userId = userSession.currentUser?.id else { return }
 
         let reportService = ReportService()
@@ -107,7 +110,8 @@ struct CreateReportView: View {
                     rating: rating,
                     height: height,
                     crowd: crowd,
-                    comment: comment.isEmpty ? nil : comment
+                    comment: comment.isEmpty ? nil : comment,
+                    visibility: visibility
                 )
                 print("Report successfully added!")
                 // ✅ Notify `ReportListView` before dismissing

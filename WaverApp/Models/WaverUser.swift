@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WaverUser: Codable {
+struct WaverUser: Identifiable, Codable {
     let id: UUID
     let authID: UUID
     let username: String

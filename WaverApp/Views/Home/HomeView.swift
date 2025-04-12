@@ -12,6 +12,8 @@ struct HomeView: View {
     @StateObject private var dataManager = SurfDataManager()
     @State private var isSearchPresented = false
     @State private var isProfilePresented = false
+    @State private var selectedSpot: Spot? = nil
+    @State private var showSheet = false
     @State private var sidebarOffset: CGFloat = -UIScreen.main.bounds.width * 0.75
     
     // ✅ Immediately create placeholder spots based on the number of favorites
@@ -77,7 +79,7 @@ struct HomeView: View {
                                         .font(.largeTitle)
                                         .foregroundColor(.gray)
                                     
-                                    Text("Tap the search icon to start finding spots")
+                                    Text("Tap the search icon to start finding spots and friends")
                                         .font(.headline)
                                         .foregroundColor(.secondary)
                                         .multilineTextAlignment(.center)
@@ -87,7 +89,10 @@ struct HomeView: View {
                             } else {
                                 // ✅ Fill with real data when available
                                 ForEach(dataManager.spots) { spot in
-                                    NavigationLink(destination: ReportListView(spot: spot, dataManager: dataManager)) {
+                                    Button(action: {
+                                        selectedSpot = spot
+                                        showSheet = true
+                                    }) {
                                         SpotViewSimple(
                                             spot: spot,
                                             distribution: dataManager.distribution(for: spot.id),
@@ -97,7 +102,13 @@ struct HomeView: View {
                                         .padding(.horizontal)
                                     }
                                     .buttonStyle(PlainButtonStyle())
-                                    .transition(.opacity.combined(with: .scale)) // ✅ Smooth fade-in
+                                    .transition(.opacity.combined(with: .scale))
+                                }
+                                .sheet(item: $selectedSpot) { spot in
+                                    NavigationStack {
+                                        ReportListView(spot: spot, dataManager: dataManager)
+                                            .id(spot.id) // ✅ Ensures fresh view load every time
+                                    }
                                 }
                             }
                         }
@@ -111,6 +122,7 @@ struct HomeView: View {
                 .sheet(isPresented: $isSearchPresented) {
                     SearchView()
                         .environmentObject(dataManager)
+                        .environmentObject(userSession)
                 }
                 .sheet(isPresented: $isProfilePresented) {
                     ProfileView(dataManager: dataManager)
