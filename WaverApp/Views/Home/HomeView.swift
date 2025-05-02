@@ -12,6 +12,7 @@ struct HomeView: View {
     @StateObject private var dataManager = SurfDataManager()
     @State private var isSearchPresented = false
     @State private var isProfilePresented = false
+    @State private var isFriendsPresented = false
     @State private var selectedSpot: Spot? = nil
     @State private var showSheet = false
     @State private var sidebarOffset: CGFloat = -UIScreen.main.bounds.width * 0.75
@@ -37,6 +38,15 @@ struct HomeView: View {
                             .font(.largeTitle).bold()
                         
                         Spacer()
+                        
+                        Button {
+                            isFriendsPresented.toggle()
+                        } label: {
+                            Image(systemName: "person.2.fill")
+                                .font(.title2)
+                                .foregroundColor(.primary)
+                                .imageScale(.small)
+                        }
                         
                         Button {
                             isProfilePresented.toggle()
@@ -128,6 +138,11 @@ struct HomeView: View {
                     ProfileView(dataManager: dataManager)
                         .environmentObject(userSession)
                 }
+                .sheet(isPresented: $isFriendsPresented) {
+                    FriendReportListView()
+                        .environmentObject(userSession)
+                }
+
                 .onAppear {
                     Task {
                         await refreshFavorites()

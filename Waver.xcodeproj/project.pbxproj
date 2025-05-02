@@ -17,7 +17,6 @@
 		F31864D52DA85220007D997D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31864D42DA85220007D997D /* UserProfileView.swift */; };
 		F34E9E0C2D672E2A00C2D944 /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E0B2D672E2A00C2D944 /* ReportListView.swift */; };
 		F34E9E0F2D68938600C2D944 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E0E2D68938600C2D944 /* ProfileView.swift */; };
-		F34E9E112D6893BC00C2D944 /* ProfileReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E102D6893BC00C2D944 /* ProfileReportView.swift */; };
 		F34E9E132D69278B00C2D944 /* SpotListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E122D69278B00C2D944 /* SpotListView.swift */; };
 		F34E9E152D69853C00C2D944 /* CreateReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E142D69853C00C2D944 /* CreateReportView.swift */; };
 		F34E9E172D69AC6900C2D944 /* ReportSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9E162D69AC6900C2D944 /* ReportSelectionView.swift */; };
@@ -37,6 +36,9 @@
 		F376F6962DAA420300755376 /* FriendManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6952DAA420300755376 /* FriendManagementView.swift */; };
 		F376F6982DAA552000755376 /* RequestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6972DAA552000755376 /* RequestRow.swift */; };
 		F376F69A2DAA790200755376 /* VisibilitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6992DAA790200755376 /* VisibilitySelectorView.swift */; };
+		F376F69C2DAA7CD800755376 /* ContactSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F69B2DAA7CD800755376 /* ContactSheet.swift */; };
+		F376F69E2DAE3D1000755376 /* FriendReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F69D2DAE3D1000755376 /* FriendReportListView.swift */; };
+		F376F6A42DAE62E600755376 /* UnifiedReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F376F6A32DAE62E600755376 /* UnifiedReportView.swift */; };
 		F3822A762D86895C00488DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */; };
 		F3822A792D9E5D8900488DF0 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A782D9E5D8900488DF0 /* Auth */; };
 		F3822A7B2D9E5D8900488DF0 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = F3822A7A2D9E5D8900488DF0 /* Functions */; };
@@ -49,7 +51,6 @@
 		F38887FA2D6BCAD30097F3BE /* AuthHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */; };
 		F3A830F92D666F150022659C /* RatingDistribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A830F82D666F150022659C /* RatingDistribution.swift */; };
 		F3A830FC2D666F410022659C /* SpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A830FB2D666F410022659C /* SpotView.swift */; };
-		F3A831012D66E1C00022659C /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A831002D66E1C00022659C /* ReportView.swift */; };
 		F3A831032D66EDC50022659C /* SurfHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A831022D66EDC50022659C /* SurfHelpers.swift */; };
 		F3C0BA1E2D5EE7A800350C01 /* WaverUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0BA1D2D5EE7A800350C01 /* WaverUser.swift */; };
 		F3C0BA202D5EE8B400350C01 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0BA1F2D5EE8B400350C01 /* Report.swift */; };
@@ -83,7 +84,6 @@
 		F31864D42DA85220007D997D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		F34E9E0B2D672E2A00C2D944 /* ReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
 		F34E9E0E2D68938600C2D944 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		F34E9E102D6893BC00C2D944 /* ProfileReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReportView.swift; sourceTree = "<group>"; };
 		F34E9E122D69278B00C2D944 /* SpotListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListView.swift; sourceTree = "<group>"; };
 		F34E9E142D69853C00C2D944 /* CreateReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReportView.swift; sourceTree = "<group>"; };
 		F34E9E162D69AC6900C2D944 /* ReportSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSelectionView.swift; sourceTree = "<group>"; };
@@ -103,13 +103,15 @@
 		F376F6952DAA420300755376 /* FriendManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendManagementView.swift; sourceTree = "<group>"; };
 		F376F6972DAA552000755376 /* RequestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRow.swift; sourceTree = "<group>"; };
 		F376F6992DAA790200755376 /* VisibilitySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilitySelectorView.swift; sourceTree = "<group>"; };
+		F376F69B2DAA7CD800755376 /* ContactSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSheet.swift; sourceTree = "<group>"; };
+		F376F69D2DAE3D1000755376 /* FriendReportListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendReportListView.swift; sourceTree = "<group>"; };
+		F376F6A32DAE62E600755376 /* UnifiedReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedReportView.swift; sourceTree = "<group>"; };
 		F3822A752D86895C00488DF0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3822A842D9E5F2300488DF0 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		F38887F72D6BCA9F0097F3BE /* ValidationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationIcon.swift; sourceTree = "<group>"; };
 		F38887F92D6BCAD30097F3BE /* AuthHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelpers.swift; sourceTree = "<group>"; };
 		F3A830F82D666F150022659C /* RatingDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDistribution.swift; sourceTree = "<group>"; };
 		F3A830FB2D666F410022659C /* SpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotView.swift; sourceTree = "<group>"; };
-		F3A831002D66E1C00022659C /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		F3A831022D66EDC50022659C /* SurfHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfHelpers.swift; sourceTree = "<group>"; };
 		F3C0BA1D2D5EE7A800350C01 /* WaverUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaverUser.swift; sourceTree = "<group>"; };
 		F3C0BA1F2D5EE8B400350C01 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
@@ -154,8 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				F34E9E0E2D68938600C2D944 /* ProfileView.swift */,
-				F34E9E102D6893BC00C2D944 /* ProfileReportView.swift */,
 				F34E9E1E2D6B27AE00C2D944 /* PreferencesView.swift */,
+				F376F69B2DAA7CD800755376 /* ContactSheet.swift */,
 				F376F6952DAA420300755376 /* FriendManagementView.swift */,
 			);
 			path = Profile;
@@ -185,10 +187,11 @@
 		F376F6872DA9C13100755376 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				F31864D42DA85220007D997D /* UserProfileView.swift */,
 				F376F68A2DA9C26900755376 /* FriendButtonView.swift */,
 				F376F68C2DA9C28300755376 /* FriendButtonViewModel.swift */,
-				F31864D42DA85220007D997D /* UserProfileView.swift */,
 				F376F6972DAA552000755376 /* RequestRow.swift */,
+				F376F69D2DAE3D1000755376 /* FriendReportListView.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -215,7 +218,7 @@
 		F3A830FF2D66E1A90022659C /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				F3A831002D66E1C00022659C /* ReportView.swift */,
+				F376F6A32DAE62E600755376 /* UnifiedReportView.swift */,
 				F34E9E0B2D672E2A00C2D944 /* ReportListView.swift */,
 				F37267682D78295B004A81B0 /* ReportListToolbar.swift */,
 				F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */,
@@ -409,6 +412,7 @@
 				F31864C92DA49EB7007D997D /* SearchResultsView.swift in Sources */,
 				F38887F82D6BCA9F0097F3BE /* ValidationIcon.swift in Sources */,
 				F3C0BA222D5F31CB00350C01 /* Favorite.swift in Sources */,
+				F376F6A42DAE62E600755376 /* UnifiedReportView.swift in Sources */,
 				F3A830FC2D666F410022659C /* SpotView.swift in Sources */,
 				F3C0BA322D65C95F00350C01 /* HomeView.swift in Sources */,
 				F3CFB5D62D5ED9B30083E353 /* SupabaseService.swift in Sources */,
@@ -417,6 +421,7 @@
 				F372676B2D78297C004A81B0 /* ReportListFloatingButton.swift in Sources */,
 				F3A831032D66EDC50022659C /* SurfHelpers.swift in Sources */,
 				F34E9E132D69278B00C2D944 /* SpotListView.swift in Sources */,
+				F376F69C2DAA7CD800755376 /* ContactSheet.swift in Sources */,
 				F376F69A2DAA790200755376 /* VisibilitySelectorView.swift in Sources */,
 				F376F68B2DA9C26900755376 /* FriendButtonView.swift in Sources */,
 				F3C0BA342D65DA7700350C01 /* RegionNode.swift in Sources */,
@@ -427,8 +432,8 @@
 				F3CFB5D42D5ED9900083E353 /* Spot.swift in Sources */,
 				F3A830F92D666F150022659C /* RatingDistribution.swift in Sources */,
 				F3C0BA242D5F36D400350C01 /* UserService.swift in Sources */,
+				F376F69E2DAE3D1000755376 /* FriendReportListView.swift in Sources */,
 				F3FA3C8F2D6FCCD60014976B /* RegistrationConfirmationView.swift in Sources */,
-				F3A831012D66E1C00022659C /* ReportView.swift in Sources */,
 				F372676D2D78EAE8004A81B0 /* SurfDataManager.swift in Sources */,
 				F376F6922DAA2CAA00755376 /* ToastManager.swift in Sources */,
 				F34E9E172D69AC6900C2D944 /* ReportSelectionView.swift in Sources */,
@@ -452,7 +457,6 @@
 				F34E9E1F2D6B27AE00C2D944 /* PreferencesView.swift in Sources */,
 				F3C0BA202D5EE8B400350C01 /* Report.swift in Sources */,
 				F3C0BA2A2D5F3C5000350C01 /* SpotService.swift in Sources */,
-				F34E9E112D6893BC00C2D944 /* ProfileReportView.swift in Sources */,
 				F3C0BA282D5F3ABA00350C01 /* FavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.waversurfreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -638,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.waversurfing.waversurfreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

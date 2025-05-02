@@ -44,7 +44,7 @@ struct PreferencesView: View {
                             HStack {
                                 Image(systemName: "envelope")
                                     .foregroundColor(.blue)
-                                Text("Contact Us")
+                                Text("Contact")
                                     .foregroundColor(.primary)
                                 Spacer()
                             }
@@ -105,39 +105,5 @@ struct PreferencesView: View {
         .sheet(isPresented: $isShowingContactSheet) {
             ContactSheet()
         }
-    }
-}
-
-// ✅ Contact Sheet View
-struct ContactSheet: View {
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        VStack(spacing: 16) {
-            Spacer()
-            Text("Contact Us")
-                .font(.title2)
-                .bold()
-            Text("For feedback, support, or inquiries reach us at:")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Text("waversurfing@gmail.com")
-                .font(.headline)
-                .foregroundColor(.blue)
-            Spacer()
-            Button(action: { dismiss() }) {
-                Text("Close")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color(UIColor.systemGray5))
-                    .foregroundColor(.primary)
-                    .cornerRadius(12)
-            }
-            .padding(.horizontal)
-        }
-        .padding()
-        .background(Color(UIColor.systemBackground))
-        .presentationDetents([.fraction(0.3)])
     }
 }

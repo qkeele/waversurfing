@@ -58,12 +58,8 @@ struct UserProfileView: View {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(reports, id: \.0.id) { report, spotName in
-                            ProfileReportView(
-                                report: report,
-                                spotName: spotName,
-                                dataManager: dataManager
-                            )
-                            .padding(.horizontal)
+                            UnifiedReportView(report: report, username: nil, spotName: spotName, showFullDate: true)
+                                .padding(.horizontal)
                         }
                     }
                     .padding(.top, 8)

@@ -16,7 +16,9 @@ struct SpotViewSimple: View {
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
             Text(spot.name)
-                .font(.title3).bold() // Larger spot name
+                .font(.title3).bold()
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
             
             Spacer()
 

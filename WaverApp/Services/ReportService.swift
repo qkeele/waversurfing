@@ -89,7 +89,7 @@ class ReportService: ObservableObject {
 
         let responseData = try await client
             .from("reports")
-            .select("id, user_id, spot_id, rating, height, crowd, comment, timestamp::text") // ✅ Ensure timestamp is text
+            .select("id, user_id, spot_id, rating, height, crowd, comment, timestamp::text")
             .eq("spot_id", value: spotId)
             .gte("timestamp", value: todayString)
             .order("timestamp", ascending: false)
@@ -98,5 +98,38 @@ class ReportService: ObservableObject {
 
         let reports = try Report.decoder.decode([Report].self, from: responseData)
         return reports
+    }
+    
+    func fetchFriendReports(authId: UUID) async throws -> [Report] {
+        let client = SupabaseService.shared.client
+
+        // Format today’s date (UTC midnight)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let todayString = formatter.string(from: Calendar.current.startOfDay(for: Date()))
+
+        // Step 1: Get all friend user_ids for this auth_id
+        let friendResponse = try await client
+            .rpc("get_accepted_friends", params: ["user_id": authId.uuidString])
+            .execute()
+
+        struct FriendUser: Decodable { let id: UUID }
+        let friendUsers = try JSONDecoder().decode([FriendUser].self, from: friendResponse.data)
+        let friendUserIds = friendUsers.map { $0.id }
+
+        guard !friendUserIds.isEmpty else { return [] }
+
+        // Step 2: Query reports for all those friends
+        let response = try await client
+            .from("reports")
+            .select("id, user_id, spot_id, rating, height, crowd, comment, timestamp::text, visibility")
+            .in("user_id", values: friendUserIds)
+            .gte("timestamp", value: todayString)
+            .order("timestamp", ascending: false)
+            .execute()
+
+        return try Report.decoder.decode([Report].self, from: response.data)
     }
 }

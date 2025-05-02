@@ -100,5 +100,4 @@ final class FriendsService: ObservableObject {
 
         return try WaverUser.decoder.decode([WaverUser].self, from: response.data)
     }
-
 }
