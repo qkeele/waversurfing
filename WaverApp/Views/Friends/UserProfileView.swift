@@ -10,12 +10,15 @@ import SwiftUI
 struct UserProfileView: View {
     let user: WaverUser
     @EnvironmentObject var userSession: UserSession
-    @ObservedObject var dataManager = SurfDataManager()
+    @EnvironmentObject var dataManager: SurfDataManager
     @StateObject private var reportService = ReportService()
     @StateObject private var toastManager = ToastManager()
     @Environment(\.dismiss) private var dismiss
     @State private var reports: [(Report, String?)] = []
     @State private var isLoading = true
+    @State private var selectedSpotId: IdentifiableUUID?
+    @State private var selectedReport: Report?
+    @State private var showDeleteConfirmation = false
 
     var body: some View {
         VStack {
@@ -58,7 +61,15 @@ struct UserProfileView: View {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(reports, id: \.0.id) { report, spotName in
-                            UnifiedReportView(report: report, username: nil, spotName: spotName, showFullDate: true)
+                            let isOwner = report.user_id == userSession.currentUser?.id
+                            UnifiedReportView(
+                                report: report,
+                                username: nil,
+                                spotName: spotName,
+                                showFullDate: true,
+                                currentUserId: isOwner ? userSession.currentUser?.id : nil,
+                                onSpotTap: { selectedSpotId = IdentifiableUUID(id: $0) }
+                            )
                                 .padding(.horizontal)
                         }
                     }
@@ -68,6 +79,11 @@ struct UserProfileView: View {
         }
         .task {
             await fetchReports() // ✅ Use the same fetch logic from ProfileView
+        }
+        .sheet(item: $selectedSpotId) { identifiable in
+            NavigationStack {
+                SpotReportListViewLoader(spotId: identifiable.id)
+            }
         }
         .navigationBarHidden(true)
         .overlay(alignment: .topTrailing) {

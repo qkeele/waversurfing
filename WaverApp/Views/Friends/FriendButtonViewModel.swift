@@ -43,20 +43,16 @@ final class FriendButtonViewModel: ObservableObject {
         }
 
         do {
-            if friendshipStatus == .requestReceived {
-                try await service.acceptFriendRequest(myId: myId, otherId: otherId)
-                friendshipStatus = .friends
-                toastManager.showToast(message: "Friend accepted", color: .green)
-            } else {
-                try await service.sendFriendRequest(myId: myId, otherId: otherId)
-                friendshipStatus = .requestSent
-                toastManager.showToast(message: "Request sent", color: .green)
-            }
+            let result = try await service.upsertFriendRequest(myId: myId, otherId: otherId)
+            friendshipStatus = result
+            toastManager.showToast(
+                message: result == .friends ? "Friend accepted" : "Request sent",
+                color: .green
+            )
         } catch {
             toastManager.showToast(message: "Error: \(error.localizedDescription)", color: .red)
         }
     }
-
 
     func handleCancel(myId: UUID, otherId: UUID, toastManager: ToastManager) async {
         do {

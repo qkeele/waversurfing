@@ -9,15 +9,18 @@ import SwiftUI
 
 struct ReportListView: View {
     let spot: Spot
-    @ObservedObject var dataManager: SurfDataManager
+    @EnvironmentObject var dataManager: SurfDataManager
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var userSession: UserSession
 
+    @State private var selectedUserId: IdentifiableUUID?
     @State private var isFavorited = false
     @State private var isCreatingReport = false
     @State private var canSubmit = false
     @State private var hasLoaded = false
     @State private var usernames: [UUID: String] = [:]
+    @State private var selectedReport: Report?
+    @State private var showDeleteConfirmation = false
 
     @StateObject private var favoriteService = FavoriteService()
     @StateObject private var reportService = ReportService()
@@ -48,10 +51,16 @@ struct ReportListView: View {
                             .padding()
 
                             ForEach(reports) { report in
+                                let isOwner = report.user_id == userSession.currentUser?.id
                                 UnifiedReportView(
                                     report: report,
                                     username: usernames[report.user_id],
-                                    spotName: nil, showFullDate: false
+                                    spotName: nil,
+                                    showFullDate: false,
+                                    currentUserId: isOwner ? userSession.currentUser?.id : nil,
+                                    onUserTap: { selectedUserId = IdentifiableUUID(id: $0) },
+                                    onEditTap: isOwner ? { selectedReport = $0 } : nil,
+                                    onDeleteTap: isOwner ? { selectedReport = $0; showDeleteConfirmation = true } : nil
                                 )
                                 .padding(.horizontal)
                             }
@@ -92,6 +101,11 @@ struct ReportListView: View {
                     await checkIfCanSubmit()
                     await preloadUsernames()
                 }
+            }
+        }
+        .sheet(item: $selectedUserId) { identifiable in
+            NavigationStack {
+                UserProfileViewLoader(userId: identifiable.id)
             }
         }
         .onAppear {

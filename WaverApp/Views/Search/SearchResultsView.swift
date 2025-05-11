@@ -30,7 +30,7 @@ struct SearchResultsView: View {
                 List {
                     if viewModel.searchType == .spots {
                         ForEach(viewModel.spotResults) { spot in
-                            NavigationLink(destination: ReportListView(spot: spot, dataManager: dataManager)) {
+                            NavigationLink(destination: ReportListView(spot: spot)) {
                                 Text(spot.name)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
@@ -42,7 +42,6 @@ struct SearchResultsView: View {
                     } else {
                         ForEach(viewModel.userResults, id: \.id) { user in
                             NavigationLink(destination: UserProfileView(user: user)
-                                .environmentObject(userSession)
                             ) {
                                 Text(user.username)
                                     .frame(maxWidth: .infinity, alignment: .leading)

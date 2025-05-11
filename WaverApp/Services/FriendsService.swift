@@ -100,4 +100,20 @@ final class FriendsService: ObservableObject {
 
         return try WaverUser.decoder.decode([WaverUser].self, from: response.data)
     }
+    
+    func upsertFriendRequest(myId: UUID, otherId: UUID) async throws -> FriendshipStatus {
+        let response = try await client
+            .rpc("upsert_friend_request", params: [
+                "requester": myId.uuidString,
+                "receiver": otherId.uuidString
+            ])
+            .execute()
+
+        guard let status = String(data: response.data, encoding: .utf8)?
+                .replacingOccurrences(of: "\"", with: "") else {
+            return .notFriends
+        }
+
+        return status == "accepted" ? .friends : .requestSent
+    }
 }

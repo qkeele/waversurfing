@@ -30,6 +30,23 @@ class UserService: ObservableObject {
             return nil
         }
     }
+    
+    func fetchUser(byId userId: UUID) async -> WaverUser? {
+        do {
+            let response = try await client
+                .from("users")
+                .select("id, username")
+                .eq("id", value: userId.uuidString)
+                .single()
+                .execute()
+
+            let user = try JSONDecoder().decode(WaverUser.self, from: response.data)
+            return user
+        } catch {
+            print("Error fetching user object: \(error)")
+            return nil
+        }
+    }
 
     func requestAccountDeletion(userId: UUID) async {
         do {

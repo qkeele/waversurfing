@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8FA57C32DCD4F4B0084E178 /* UserProfileViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA57C22DCD4F4B0084E178 /* UserProfileViewLoader.swift */; };
+		B8FA57C52DCD4F5E0084E178 /* SpotReportListViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA57C42DCD4F5E0084E178 /* SpotReportListViewLoader.swift */; };
+		B8FA57C72DCD53760084E178 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA57C62DCD53760084E178 /* AppRoute.swift */; };
 		F306496B2D7B9F6C00363D8C /* ReportConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F306496A2D7B9F6C00363D8C /* ReportConfirmationView.swift */; };
 		F306496D2D7BE1A300363D8C /* WaverSplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F306496C2D7BE1A300363D8C /* WaverSplashScreenView.swift */; };
 		F31864C92DA49EB7007D997D /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31864C82DA49EB7007D997D /* SearchResultsView.swift */; };
@@ -74,6 +77,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8FA57C22DCD4F4B0084E178 /* UserProfileViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewLoader.swift; sourceTree = "<group>"; };
+		B8FA57C42DCD4F5E0084E178 /* SpotReportListViewLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotReportListViewLoader.swift; sourceTree = "<group>"; };
+		B8FA57C62DCD53760084E178 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		F306496A2D7B9F6C00363D8C /* ReportConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportConfirmationView.swift; sourceTree = "<group>"; };
 		F306496C2D7BE1A300363D8C /* WaverSplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaverSplashScreenView.swift; sourceTree = "<group>"; };
 		F31864C82DA49EB7007D997D /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 				F34E9E1E2D6B27AE00C2D944 /* PreferencesView.swift */,
 				F376F69B2DAA7CD800755376 /* ContactSheet.swift */,
 				F376F6952DAA420300755376 /* FriendManagementView.swift */,
+				B8FA57C22DCD4F4B0084E178 /* UserProfileViewLoader.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -211,6 +218,10 @@
 			children = (
 				F3A830FB2D666F410022659C /* SpotView.swift */,
 				F34E9E1C2D6B20A200C2D944 /* SpotViewSimple.swift */,
+				F34E9E0B2D672E2A00C2D944 /* ReportListView.swift */,
+				F37267682D78295B004A81B0 /* ReportListToolbar.swift */,
+				F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */,
+				B8FA57C42DCD4F5E0084E178 /* SpotReportListViewLoader.swift */,
 			);
 			path = Spot;
 			sourceTree = "<group>";
@@ -219,9 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				F376F6A32DAE62E600755376 /* UnifiedReportView.swift */,
-				F34E9E0B2D672E2A00C2D944 /* ReportListView.swift */,
-				F37267682D78295B004A81B0 /* ReportListToolbar.swift */,
-				F372676A2D78297C004A81B0 /* ReportListFloatingButton.swift */,
 				F34E9E142D69853C00C2D944 /* CreateReportView.swift */,
 				F34E9E162D69AC6900C2D944 /* ReportSelectionView.swift */,
 				F34E9E182D69AC8500C2D944 /* CommentInputView.swift */,
@@ -285,6 +293,7 @@
 				F3C0BA332D65DA7700350C01 /* RegionNode.swift */,
 				F31864CA2DA52B17007D997D /* SpotRow.swift */,
 				F31864CC2DA52B23007D997D /* UserRow.swift */,
+				B8FA57C62DCD53760084E178 /* AppRoute.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,7 +366,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					F3CFB5BE2D5ED84E0083E353 = {
 						CreatedOnToolsVersion = 15.4;
@@ -443,11 +452,14 @@
 				F38887FA2D6BCAD30097F3BE /* AuthHelpers.swift in Sources */,
 				F34E9E152D69853C00C2D944 /* CreateReportView.swift in Sources */,
 				F3C0BA262D5F3A7200350C01 /* ReportService.swift in Sources */,
+				B8FA57C32DCD4F4B0084E178 /* UserProfileViewLoader.swift in Sources */,
 				F376F68D2DA9C28300755376 /* FriendButtonViewModel.swift in Sources */,
 				F376F6962DAA420300755376 /* FriendManagementView.swift in Sources */,
 				F37267692D78295B004A81B0 /* ReportListToolbar.swift in Sources */,
 				F31864CD2DA52B23007D997D /* UserRow.swift in Sources */,
+				B8FA57C72DCD53760084E178 /* AppRoute.swift in Sources */,
 				F3CFB5C32D5ED84E0083E353 /* WaverApp.swift in Sources */,
+				B8FA57C52DCD4F5E0084E178 /* SpotReportListViewLoader.swift in Sources */,
 				F3C0BA302D64895E00350C01 /* SearchView.swift in Sources */,
 				F31864D52DA85220007D997D /* UserProfileView.swift in Sources */,
 				F31864CF2DA52B58007D997D /* SearchType.swift in Sources */,
@@ -499,6 +511,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -562,6 +575,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -592,7 +606,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -626,7 +639,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = CW3VS96Q34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";

@@ -9,10 +9,10 @@ import Foundation
 
 struct WaverUser: Identifiable, Codable {
     let id: UUID
-    let authID: UUID
+    let authID: UUID?
     let username: String
-    let email: String
-    let timestamp: Date
+    let email: String?
+    let timestamp: Date?
 
     enum CodingKeys: String, CodingKey {
         case id

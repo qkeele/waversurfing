@@ -57,8 +57,12 @@ struct RegisterView: View {
                                 .foregroundColor(Color.primary)
                                 .autocorrectionDisabled()
                                 .textInputAutocapitalization(.never)
-                                .onChange(of: username) {
-                                    usernameValidator.checkAvailability(username: username)
+                                .onChange(of: username) { oldValue, newValue in
+                                    let lowercased = newValue.lowercased()
+                                    if lowercased != newValue {
+                                        username = lowercased // force lowercase input
+                                    }
+                                    usernameValidator.checkAvailability(username: lowercased)
                                 }
 
                             ValidationIcon(isValid: usernameValidator.isAvailable)

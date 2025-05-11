@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var userSession: UserSession
-    @StateObject private var dataManager = SurfDataManager()
+    @EnvironmentObject var dataManager: SurfDataManager
     @State private var isSearchPresented = false
     @State private var isProfilePresented = false
     @State private var isFriendsPresented = false
@@ -116,7 +116,7 @@ struct HomeView: View {
                                 }
                                 .sheet(item: $selectedSpot) { spot in
                                     NavigationStack {
-                                        ReportListView(spot: spot, dataManager: dataManager)
+                                        ReportListView(spot: spot)
                                             .id(spot.id) // ✅ Ensures fresh view load every time
                                     }
                                 }
@@ -135,7 +135,7 @@ struct HomeView: View {
                         .environmentObject(userSession)
                 }
                 .sheet(isPresented: $isProfilePresented) {
-                    ProfileView(dataManager: dataManager)
+                    ProfileView()
                         .environmentObject(userSession)
                 }
                 .sheet(isPresented: $isFriendsPresented) {

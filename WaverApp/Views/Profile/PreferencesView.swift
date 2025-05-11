@@ -10,10 +10,11 @@ import SwiftUI
 struct PreferencesView: View {
     @EnvironmentObject var userSession: UserSession
     @Environment(\.dismiss) var dismiss
-    @State private var isShowingContactSheet = false // ✅ State for contact modal
+    @State private var isShowingContactSheet = false
     @State private var showDeleteAlert = false
+
     let userService = UserService.shared
-    
+
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -23,7 +24,7 @@ struct PreferencesView: View {
                         .font(.title2)
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    
+
                     Button(action: {
                         dismiss()
                     }) {
@@ -33,24 +34,20 @@ struct PreferencesView: View {
                     }
                 }
                 .padding()
-                .background(Color(UIColor.systemBackground)) // Match system background
-                
-                // Settings List
-                List {
+                .background(Color(UIColor.systemBackground)) // system-consistent background
+                .zIndex(1)
+
+                // Settings
+                Form {
                     Section {
                         Button {
-                            isShowingContactSheet = true // ✅ Opens the contact modal
+                            isShowingContactSheet = true
                         } label: {
-                            HStack {
-                                Image(systemName: "envelope")
-                                    .foregroundColor(.blue)
-                                Text("Contact")
-                                    .foregroundColor(.primary)
-                                Spacer()
-                            }
+                            Label("Contact", systemImage: "envelope")
+                                .foregroundColor(.primary)
                         }
                     }
-                    
+
                     Section {
                         Button(role: .cancel) {
                             Task {
@@ -61,25 +58,15 @@ struct PreferencesView: View {
                                 }
                             }
                         } label: {
-                            HStack {
-                                Image(systemName: "arrow.right.circle")
-                                    .foregroundColor(.primary)
-                                Text("Sign Out")
-                                    .foregroundColor(.primary)
-                                Spacer()
-                            }
+                            Label("Sign Out", systemImage: "arrow.right.circle")
+                                .foregroundColor(.primary)
                         }
-                        
+
                         Button(role: .destructive) {
                             showDeleteAlert = true
                         } label: {
-                            HStack {
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
-                                Text("Delete Account")
-                                    .foregroundColor(.red)
-                                Spacer()
-                            }
+                            Label("Delete Account", systemImage: "trash")
+                                .foregroundColor(.red)
                         }
                         .alert("Delete Account?", isPresented: $showDeleteAlert) {
                             Button("Cancel", role: .cancel) {}
@@ -98,9 +85,10 @@ struct PreferencesView: View {
                         }
                     }
                 }
-                .listStyle(.insetGrouped)
-                .scrollContentBackground(.hidden) // Remove default list background
+                .scrollContentBackground(.hidden)
+                .background(Color(UIColor.systemGroupedBackground)) // fills background properly
             }
+            .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
         }
         .sheet(isPresented: $isShowingContactSheet) {
             ContactSheet()

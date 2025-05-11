@@ -15,6 +15,7 @@ struct SpotListView: View {
     @State private var spots: [Spot] = []
     @State private var isLoading = true
     @Environment(\.dismiss) private var dismiss
+    
 
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct SpotListView: View {
             } else {
                 List {
                     ForEach(spots) { spot in
-                        NavigationLink(destination: ReportListView(spot: spot, dataManager: dataManager)) {
+                        NavigationLink(destination: ReportListView(spot: spot)) {
                             Text(spot.name)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }

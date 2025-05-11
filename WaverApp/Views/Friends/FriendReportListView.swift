@@ -16,6 +16,8 @@ struct FriendReportListView: View {
     @State private var usernames: [UUID: String] = [:]
     @State private var spotNames: [UUID: String] = [:] // key: report.id
     @State private var isLoading = true
+    @State private var selectedUserId: IdentifiableUUID?
+    @State private var selectedSpotId: IdentifiableUUID?
 
     var body: some View {
         NavigationStack {
@@ -53,16 +55,30 @@ struct FriendReportListView: View {
                     ScrollView {
                         VStack(spacing: 12) {
                             ForEach(reports, id: \.id) { report in
+                                let isOwner = report.user_id == userSession.currentUser?.id
                                 UnifiedReportView(
                                     report: report,
                                     username: usernames[report.user_id],
-                                    spotName: spotNames[report.id], showFullDate: false
+                                    spotName: spotNames[report.id], showFullDate: false,
+                                    currentUserId: isOwner ? userSession.currentUser?.id : nil,
+                                    onUserTap: { selectedUserId = IdentifiableUUID(id: $0) },
+                                    onSpotTap: { selectedSpotId = IdentifiableUUID(id: $0) }
                                 )
                                 .padding(.horizontal)
                             }
                         }
                         .padding(.top, 8)
                     }
+                }
+            }
+            .sheet(item: $selectedUserId) { identifiable in
+                NavigationStack {
+                    UserProfileViewLoader(userId: identifiable.id)
+                }
+            }
+            .sheet(item: $selectedSpotId) { identifiable in
+                NavigationStack {
+                    SpotReportListViewLoader(spotId: identifiable.id)
                 }
             }
             .task {
